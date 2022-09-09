@@ -35,16 +35,15 @@ function playRound(playerSelection, computerSelection) {
         } else if (computerSelection === "scissors") {
             return "It's a tie! You both played scissors!";
         }
-    } else {
-        const playerSelection = (prompt("Please pick a valid choice. Would you like to pick rock, paper, or scissors?")).toLowerCase();
-        const computerSelection = getComputerChoice();
-        playRound(playerSelection, computerSelection);
-    }
+    } 
 }
 
 function game() {
     for (let i = 0; i < 5; i++) {
-        const playerSelection = (prompt("Would you like to pick rock, paper, or scissors?")).toLowerCase();
+        let playerSelection = (prompt("Would you like to pick rock, paper, or scissors?")).toLowerCase();
+        while (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
+            playerSelection = (prompt("Please pick a valid choice. Would you like to pick rock, paper, or scissors?")).toLowerCase();
+        }
         const computerSelection = getComputerChoice();
         console.log(playRound(playerSelection, computerSelection));
         console.log("Player Score: " + playerScore + "; Computer Score: " + computerScore)
