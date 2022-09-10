@@ -10,34 +10,34 @@ function playRound(playerSelection, computerSelection) {
             return "It's a tie! You both played rock!";
         } else if (computerSelection === "paper") {
             computerScore = ++computerScore
-            return "You lose! Paper beats rock!";
+            return `You lose! Computer played ${computerSelection}! Paper beats rock!`;
         } else if (computerSelection === "scissors") {
             playerScore = ++playerScore
-            return "You win! Rock beats scissors!";
+            return `You win! Computer played ${computerSelection}! Rock beats scissors!`;
         }
     } else if (playerSelection === "paper") {
         if (computerSelection === "rock") {
             playerScore = ++playerScore
-            return "You win! Paper beats rock!";
+            return `You win! Computer played ${computerSelection}! Paper beats rock!`;
         } else if (computerSelection === "paper") {
             return "It's a tie! You both played paper!";
         } else if (computerSelection === "scissors") {
             computerScore = ++computerScore
-            return "You lose! Scissors beats paper!";
+            return `You lose! Computer played ${computerSelection}! Scissors beats paper!`;
         }
     } else if (playerSelection === "scissors") {
         if (computerSelection === "rock") {
             computerScore = ++computerScore
-            return "You lose! Rock beats scissors!";
+            return `You lose! Computer played ${computerSelection}! Rock beats scissors!`;
         } else if (computerSelection === "paper") {
             playerScore = ++playerScore
-            return "You win! Paper beats scissors!";
+            return `You win! Computer played ${computerSelection}! Paper beats scissors!`;
         } else if (computerSelection === "scissors") {
             return "It's a tie! You both played scissors!";
         }
     } 
 }
-
+/*
 function game() {
     for (let i = 0; i < 5; i++) {
         let playerSelection = (prompt("Would you like to pick rock, paper, or scissors?")).toLowerCase();
@@ -52,4 +52,48 @@ function game() {
 
 let playerScore = 0;
 let computerScore = 0;
-game()
+game()*/
+
+const rockBtn = document.querySelector("#rock");
+const paperBtn = document.querySelector("#paper");
+const scissorsBtn = document.querySelector("#scissors");
+let playerScore = 0;
+let computerScore = 0;
+let roundsPlayed = 0;
+
+const body = document.querySelector("body");
+const buttons = document.querySelector("#buttons");
+const results = document.querySelector("#results");
+const scores = document.querySelector("#scores");
+const player = document.querySelector("#player");
+const computer = document.querySelector("#computer");
+const rounds = document.querySelector("#rounds");
+
+rockBtn.addEventListener('click',() => {
+    const computerSelection = getComputerChoice();
+    let playerSelection = "rock";
+    results.textContent = `${playRound(playerSelection,computerSelection)}`;
+    player.textContent = `Player Score:  ${playerScore}`; 
+    computer.textContent = `Computer Score: ${computerScore}`;
+    roundsPlayed += 1;
+    rounds.textContent = `Rounds Played: ${roundsPlayed}`;
+});
+paperBtn.addEventListener('click',() => {
+    const computerSelection = getComputerChoice();
+    let playerSelection = "paper";
+    results.textContent = `${playRound(playerSelection,computerSelection)}`;
+    player.textContent = `Player Score:  ${playerScore}`; 
+    computer.textContent = `Computer Score: ${computerScore}`;
+    roundsPlayed += 1;
+    rounds.textContent = `Rounds Played: ${roundsPlayed}`;
+});
+scissorsBtn.addEventListener('click',() => {
+    const computerSelection = getComputerChoice();
+    let playerSelection = "scissors";
+    results.textContent = `${playRound(playerSelection,computerSelection)}`;
+    player.textContent = `Player Score:  ${playerScore}`; 
+    computer.textContent = `Computer Score: ${computerScore}`;
+    roundsPlayed += 1;
+    rounds.textContent = `Rounds Played: ${roundsPlayed}`;
+});
+
