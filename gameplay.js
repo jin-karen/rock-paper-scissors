@@ -54,7 +54,7 @@ let roundsPlayed = 0;
 let winner = 5;
 
 const body = document.querySelector("body");
-const buttons = document.querySelector("#buttons");
+const choiceBtns = document.querySelectorAll(".choiceBtn");
 const results = document.querySelector("#results");
 const scores = document.querySelector("#scores");
 const player = document.querySelector("#player");

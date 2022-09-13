@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    background-color: #84B8D9;
+}
+
+
+#choices{
+    margin: auto auto;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+}
+
+.choiceBtn{
+    flex: 1 1 auto;
+    background-color: transparent;
+    border: transparent;
+    padding: 0;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.choiceBtn:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 15px 1px;
+}
+
+.choiceBtn:active{
+    transform: scale(1.1) translateY(5px);
+    box-shadow: 0 0 10px 1px;
+}
+
+button img{
+    display: block;
+    width: 100%;
+}/**/
+
+
+
+#results, #scores{
+    border : 2px solid black; 
+}
+
+#player, #computer, #rounds{
+    border : 2px solid black; 
+    width : 80px; 
+    height : 40px;
+}
