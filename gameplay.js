@@ -1,3 +1,7 @@
+//player synonymous with camper; computer synonymous with bear - can be changed with story context
+let playerName = "Camper";
+let computerName = "Bear";
+
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
     const pick = Math.floor(Math.random() * 3);
@@ -10,34 +14,34 @@ function playRound(playerSelection, computerSelection) {
             results.textContent = "It's a tie! You both played rock!";
         } else if (computerSelection === "paper") {
             computerScore = ++computerScore
-            results.textContent = `You lose! Computer played ${computerSelection}! Paper beats rock!`;
+            results.textContent = `You lose! ${computerName} played ${computerSelection}! Paper beats rock!`;
         } else if (computerSelection === "scissors") {
             playerScore = ++playerScore
-            results.textContent = `You win! Computer played ${computerSelection}! Rock beats scissors!`;
+            results.textContent = `You win! ${computerName} played ${computerSelection}! Rock beats scissors!`;
         }
     } else if (playerSelection === "paper") {
         if (computerSelection === "rock") {
             playerScore = ++playerScore
-            results.textContent = `You win! Computer played ${computerSelection}! Paper beats rock!`;
+            results.textContent = `You win! ${computerName} played ${computerSelection}! Paper beats rock!`;
         } else if (computerSelection === "paper") {
             results.textContent = "It's a tie! You both played paper!";
         } else if (computerSelection === "scissors") {
             computerScore = ++computerScore
-            results.textContent = `You lose! Computer played ${computerSelection}! Scissors beats paper!`;
+            results.textContent = `You lose! ${computerName} played ${computerSelection}! Scissors beats paper!`;
         }
     } else if (playerSelection === "scissors") {
         if (computerSelection === "rock") {
             computerScore = ++computerScore
-            results.textContent = `You lose! Computer played ${computerSelection}! Rock beats scissors!`;
+            results.textContent = `You lose! ${computerName} played ${computerSelection}! Rock beats scissors!`;
         } else if (computerSelection === "paper") {
             playerScore = ++playerScore
-            results.textContent = `You win! Computer played ${computerSelection}! Paper beats scissors!`;
+            results.textContent = `You win! ${computerName} played ${computerSelection}! Paper beats scissors!`;
         } else if (computerSelection === "scissors") {
             results.textContent = "It's a tie! You both played scissors!";
         }
     } 
-    player.textContent = `Player Score:  ${playerScore}`; 
-    computer.textContent = `Computer Score: ${computerScore}`;
+    player.textContent = `${playerName} Score:  ${playerScore}`; 
+    computer.textContent = `${computerName} Score: ${computerScore}`;
     roundsPlayed += 1;
     rounds.textContent = `Rounds Played: ${roundsPlayed}`;
     if (playerScore === winner || computerScore === winner) {
