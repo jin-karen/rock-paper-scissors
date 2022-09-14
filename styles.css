@@ -62,7 +62,7 @@ button img{
 }
 
 #player, #computer{
-    border : 2px solid black; 
+    border : 2px solid #567339; 
     font-family: 'Monaco', monospace;
     font-size: 20px;
     background-color: white;
