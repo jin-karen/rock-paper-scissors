@@ -6,35 +6,53 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="context">
-        <h1>Rock, Paper, Scissors</h1>
-        <p>You are camping in the woods and just spent all day catching and cooking fish. <br>Just as you are about to start eating, a bear stumbles 
-        onto your campsite! <br>It is hungry and was lured by the smell, but you are hungrier and won't give up without a fight! <br>Beat the bear 
-        in a game of rock paper scissors, first to win five rounds wins the fish.
-        </p>
-    </div>
-    <div id="choices">
-        <button class="choiceBtn" id="rock"><img src="img/rock.png" alt="rock"></button>
-        <button class="choiceBtn" id="paper"><img src="img/paper.png" alt="paper"></button>
-        <button class="choiceBtn" id="scissors"><img src="img/scissors.png" alt="scissors"></button>
-    </div>
-    <div id="results">Camper vs. Bear</div>
-    <div id="scores">
-        <div class="scoresItem" id="playerBox">
-            <img src="img/camper.png" alt="player">
-            <div id="player"></div>
+    <div id="startScreen">
+        <div class="title">
+            <h1>Rock, Paper, Scissors</h1>
+            <h2 class="subtitle">Camper vs. Bear Edition</h2>
         </div>
-        <div class="scoresItem" id="versus">
-            <img src="img/cooking-fish.png" alt="fish">
-            <div id="rounds">Rounds Played:</div>
-        </div>
-        <div class="scoresItem" id="computerBox">
-            <img src="img/bear.png" alt="bear">
-            <div id="computer"></div>
-        </div>    
+        <button class="playBtn" id="startBtn">Start</button>
     </div>
-    
-    <div id="rules">Rules</div>
+    <div class="hidden" id="gameScreen">
+        <img class="skip conceal" src="img/skip.png" alt="skip-button">
+        <div id="context">
+            <h1>Rock, Paper, Scissors</h1>
+            <p id="contextLine1">You are camping in the woods and just spent all day catching and cooking fish.</p>
+            <p class="conceal" id="contextLine2">Just as you are about to start eating, a bear stumbles onto your campsite!</p>
+            <p class="conceal" id="contextLine3">It is hungry and was lured by the smell, but you are hungrier and won't give up without a fight!</p>
+            <p class="conceal" id="contextLine4">Beat the bear in a game of rock paper scissors, first to win five rounds wins the fish.</p> 
+        </div>
+        <div class="choices">
+            <button class="choiceBtn conceal" id="rock"><img src="img/rock.png" alt="rock"></button>
+            <button class="choiceBtn conceal" id="paper"><img src="img/paper.png" alt="paper"></button>
+            <button class="choiceBtn conceal" id="scissors"><img src="img/scissors.png" alt="scissors"></button>
+        </div>
+        <div class="conceal" id="results">Camper vs. Bear</div>
+        <div id="scores">
+            <div class="scoresItem conceal" id="playerBox">
+                <img src="img/camper.png" alt="player">
+                <div id="player"></div>
+            </div>
+            <div class="scoresItem conceal" id="versus">
+                <img src="img/cooking-fish.png" alt="fish">
+                <div id="rounds">Rounds Played:</div>
+            </div>
+            <div class="scoresItem conceal" id="computerBox">
+                <img src="img/bear.png" alt="bear">
+                <div id="computer"></div>
+            </div>    
+        </div>
+        <div class="conceal" id="rules">Rules</div>
+    </div>
+    <div class="hidden" id="endScreen">
+        <h1 id="winnerResult">Congratulations you won</h1>
+        <div id="winnerDisplay">
+            <img src="img/fish-pile.png" alt="fish-pile">
+            <img src="img/fish-pile.png" id="winnerImg">
+            <img src="img/fish-pile.png" alt="fish-pile">
+        </div>
+        <button class="playBtn" id="playAgainBtn">Play Again</button>
+    </div>
     <script src="gameplay.js"></script>
 </body>
 </html>
