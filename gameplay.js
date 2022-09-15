@@ -52,22 +52,19 @@ function playRound(playerSelection, computerSelection) {
 const startBtn = document.querySelector("#startBtn");
 const title = document.querySelector(".title");
 const subtitle = document.querySelector(".subtitle");
-const context = document.querySelectorAll("#context");
 const playAgainBtn = document.querySelector("#playAgainBtn");
 const startScreen = document.querySelector("#startScreen");
 const gameScreen = document.querySelector("#gameScreen");
 const endScreen = document.querySelector("#endScreen");
-const choiceBtns = document.querySelectorAll('.choiceBtn')
+const choiceBtns = document.querySelectorAll('.choiceBtn');
 
 let playerScore = 0;
 let computerScore = 0;
-let roundsPlayed = 0;
 let winner = 5;
 
 const results = document.querySelector("#results");
 const player = document.querySelector("#player");
 const computer = document.querySelector("#computer");
-const rounds = document.querySelector("#rounds");
 const winnerResult = document.querySelector("#winnerResult");
 const winnerImg = document.querySelector("#winnerImg");
 
@@ -76,6 +73,9 @@ const contextLine1 = document.querySelector("#contextLine1");
 const contextLine2 = document.querySelector("#contextLine2");
 const contextLine3 = document.querySelector("#contextLine3");
 const contextLine4 = document.querySelector("#contextLine4");
+
+let roundsPlayed = 0;
+const rounds = document.querySelector("#rounds");
 
 startBtn.addEventListener('click',() => {
     startScreenAnimation();
@@ -87,47 +87,41 @@ startBtn.addEventListener('click',() => {
 });
 
 function startScreenAnimation() {
-    title.setAttribute('style','transform: translate(-50%, -145%); transition: all 1s;');
-    subtitle.setAttribute('style','opacity: 0; transition: all 1s;');
+    title.setAttribute('style','transform: translate(-50%, -145%); transition: transform 1s;');
+    subtitle.setAttribute('style','opacity: 0; transition: opacity 1s;');
 }
 
 function gameScreenAnimation() {
     skip.classList.toggle('conceal');
     contextLine1.classList.toggle('appear');
+    contextLine2.setAttribute('style','animation-delay: 3s;');
+    contextLine2.classList.toggle('appear');
+    contextLine3.setAttribute('style','animation-delay: 6s;');
+    contextLine3.classList.toggle('appear');
+    contextLine4.setAttribute('style','animation-delay: 9s;');
+    contextLine4.classList.toggle('appear');
     window.setTimeout(() => {    
-        contextLine2.classList.toggle('conceal');
-        contextLine2.classList.toggle('appear');
-    }, 3000);         
-    window.setTimeout(() => {
-        contextLine3.classList.toggle('conceal');
-        contextLine3.classList.toggle('appear');
-    }, 6000);   
-    window.setTimeout(() => {    
-        contextLine4.classList.toggle('conceal');
-        contextLine4.classList.toggle('appear');
-    }, 9000);   
-    window.setTimeout(() => {    
-        skip.classList.toggle('hidden');
-        const conceal = document.querySelectorAll('.conceal');
-        for (const items of conceal) {
-            items.classList.toggle('conceal');
+        if (!skip.classList.contains('hidden')) {
+            endAnimation();
         }
-        const appear = document.querySelectorAll('.appear');
-        for (const items of appear) {
-            items.classList.toggle('appear');
-        }
-    }, 12000);  
+    }, 12000);
 }
 
-skip.addEventListener('click',skipAnimation);
+skip.addEventListener('click',endAnimation);
 
-function skipAnimation() {
+function endAnimation() {
+    skip.classList.toggle('hidden');
     const conceal = document.querySelectorAll('.conceal');
     for (const items of conceal) {
         items.classList.toggle('conceal');
     }
-    context.stop(true,true);
-    //This doesn't work, can't get javascript to skip queue
+    const appear = document.querySelectorAll('.appear');
+    for (const items of appear) {
+        items.classList.toggle('appear');
+    }
+    contextLine2.setAttribute('style','animation-delay: 0s;');
+    contextLine3.setAttribute('style','animation-delay: 0s;');
+    contextLine4.setAttribute('style','animation-delay: 0s;');
 }
 
 choiceBtns.forEach((button) => {
@@ -165,3 +159,4 @@ function reset() {
     player.textContent = "";//`${playerName} Score:  ${playerScore}`; 
     computer.textContent = "";//`${computerName} Score: ${computerScore}`;
 }
+
