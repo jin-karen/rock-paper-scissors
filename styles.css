@@ -93,6 +93,14 @@ p{
     width: 100%;
 }
 
+.footer{
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%);
+    color: #084A59;
+}
+
 #title{
     position: absolute;
     top: 30%;
