@@ -20,6 +20,7 @@ h1{
 h2{
     font-family: 'Monaco', monospace;
     color: #084A59;
+    font-size: 140%;
 }
 
 p{
@@ -169,14 +170,14 @@ p{
     cursor: pointer;
 }
 
+#rulesImg{
+    width: 15%;
+}
+
 #rules{
     display: flex;
     justify-content: center;
     gap: 5%;
-}
-
-#rulesImg{
-    width: 15%;
 }
 
 #rules img{
