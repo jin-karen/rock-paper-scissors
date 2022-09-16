@@ -1,10 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Page Title</title>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+    <audio id="btnSound" src="sound/btnSound.mp3"></audio>
+    <audio id="winSound" src="sound/winSound.mp3"></audio>
+    <audio id="loseSound" src="sound/loseSound.mp3"></audio>
+    <div id="startScreen">
+        <div id="title">
+            <h1>Rock, Paper, Scissors</h1>
+            <h2 id="subtitle">Camper vs. Bear Edition</h2>
+        </div>
+        <button class="playBtn" id="startBtn">Start</button>
+    </div>
+    <div class="hidden" id="gameScreen">
+        <img class="conceal" id="skipBtn" src="img/skip.png" alt="skip-button">
+        <div id="context">
+            <h1>Rock, Paper, Scissors</h1>
+            <p id="contextLine1">You are camping in the woods and just spent all day catching and cooking fish.</p>
+            <p id="contextLine2">Just as you are about to start eating, a bear stumbles onto your campsite!</p>
+            <p id="contextLine3">It is hungry and was lured by the smell, but you are hungrier and won't give up without a fight!</p>
+            <p id="contextLine4">Beat the bear in a game of rock paper scissors, first to win five rounds wins the fish.</p> 
+        </div>
+        <div id="choices">
+            <button class="choiceBtn conceal" id="rock"><img src="img/rock.png" alt="rock"></button>
+            <button class="choiceBtn conceal" id="paper"><img src="img/paper.png" alt="paper"></button>
+            <button class="choiceBtn conceal" id="scissors"><img src="img/scissors.png" alt="scissors"></button>
+        </div>
+        <div class="conceal" id="results">Camper vs. Bear</div>
+        <div id="scores">
+            <div class="conceal" id="playerBox">
+                <img src="img/camper.png" alt="player">
+                <div id="player"></div>
+            </div>
+            <div class="conceal" id="versus">
+                <img src="img/cooking-fish.png" alt="fish">
+                <div id="rounds">Rounds Played:</div>
+            </div>
+            <div class="conceal" id="computerBox">
+                <img src="img/bear.png" alt="bear">
+                <div id="computer"></div>
+            </div>    
+        </div>
+        <img class="conceal" id="helpBtn" src="img/help.png" alt="help-button">
+    </div>
+    <div class="hidden" id="helpScreen">
+        <img id="exitBtn" src="img/exit.png" alt="exit-button">
+        <h1>Rules</h1>
+        <h2>In each round, the camper and bear will both choose between rock, paper, and scissors.</h2>
+        <img id=rulesImg src="img/rules.png" alt="rulesImg">
+        <div id="rules">
+            <div>
+                <h2>Rock beats Scissors </h2>
+                <img src="img/rock-beats-scissors.png" alt="rbsImg">
+            </div>
+            <div>
+                <h2>Paper beats Rock </h2>
+                <img src="img/paper-beats-rock.png" alt="pbrImg">
+            </div>
+            <div>
+                <h2>Scissors beats Paper </h2>
+                <img src="img/scissors-beats-paper.png" alt="sbpImg">
+            </div>       
+        </div>
+        <h2>The first to win five rounds wins the game!</h2>
+    </div>
+    <div class="hidden" id="endScreen">
+        <h1 id="winnerResult">Congratulations you won</h1>
+        <div id="winnerDisplay">
+            <img src="img/fish-pile.png" alt="fish-pile">
+            <img src="img/fish-pile.png" id="winnerImg" alt="winner">
+            <img src="img/fish-pile.png" alt="fish-pile">
+        </div>
+        <button class="playBtn" id="playAgainBtn">Play Again</button>
+    </div>
+    <div class="footer">© 2022 Karen Jin</div>
     <script src="gameplay.js"></script>
 </body>
 </html>
