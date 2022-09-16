@@ -6,5 +6,5 @@ This game is recreated with Javascript, HTML, and CSS. It is my first project ap
 ## To run:
 Live: 
 
-Project was coded for 1920x1080 display resolution and adjustments were made for smaller screens. 
+Project was coded for 1920x1080 display resolution and adjustments were made for smaller screens.<br/>
 Desktop chrome usage at 1920x1080 is recommended for best viewing experience.  
