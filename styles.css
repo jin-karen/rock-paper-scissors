@@ -28,19 +28,12 @@ p{
     margin: 0px;
 }
 
-.title{
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    width: 100%;
-}
-
+/*keeps other pages/elements hidden while viewing current one*/
 .hidden{
     display: none;
 }
 
+/*transition and animation from start to game screen*/
 .conceal{
     display: none;
 }
@@ -76,22 +69,6 @@ p{
     box-shadow: 0 0 15px 1px;
 }
 
-.skipBtn{
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 3%;
-    cursor: pointer;
-}
-
-.choices{
-    margin: 40px auto;
-    width: 60%;
-    display: flex;
-    justify-content: center;
-    gap: 10%;
-}
-
 .choiceBtn{
     flex: 1 1 auto;
     background-color: transparent;
@@ -114,6 +91,31 @@ p{
 .choiceBtn img{
     display: block;
     width: 100%;
+}
+
+#title{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+#skipBtn{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 3%;
+    cursor: pointer;
+}
+
+#choices{
+    margin: 40px auto;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    gap: 10%;
 }
 
 #results{

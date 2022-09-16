@@ -10,14 +10,14 @@
     <audio id="winSound" src="sound/winSound.mp3"></audio>
     <audio id="loseSound" src="sound/loseSound.mp3"></audio>
     <div id="startScreen">
-        <div class="title">
+        <div id="title">
             <h1>Rock, Paper, Scissors</h1>
-            <h2 class="subtitle">Camper vs. Bear Edition</h2>
+            <h2 id="subtitle">Camper vs. Bear Edition</h2>
         </div>
         <button class="playBtn" id="startBtn">Start</button>
     </div>
     <div class="hidden" id="gameScreen">
-        <img class="skipBtn conceal" src="img/skip.png" alt="skip-button">
+        <img class="conceal" id="skipBtn" src="img/skip.png" alt="skip-button">
         <div id="context">
             <h1>Rock, Paper, Scissors</h1>
             <p id="contextLine1">You are camping in the woods and just spent all day catching and cooking fish.</p>
@@ -25,22 +25,22 @@
             <p id="contextLine3">It is hungry and was lured by the smell, but you are hungrier and won't give up without a fight!</p>
             <p id="contextLine4">Beat the bear in a game of rock paper scissors, first to win five rounds wins the fish.</p> 
         </div>
-        <div class="choices">
+        <div id="choices">
             <button class="choiceBtn conceal" id="rock"><img src="img/rock.png" alt="rock"></button>
             <button class="choiceBtn conceal" id="paper"><img src="img/paper.png" alt="paper"></button>
             <button class="choiceBtn conceal" id="scissors"><img src="img/scissors.png" alt="scissors"></button>
         </div>
         <div class="conceal" id="results">Camper vs. Bear</div>
         <div id="scores">
-            <div class="scoresItem conceal" id="playerBox">
+            <div class="conceal" id="playerBox">
                 <img src="img/camper.png" alt="player">
                 <div id="player"></div>
             </div>
-            <div class="scoresItem conceal" id="versus">
+            <div class="conceal" id="versus">
                 <img src="img/cooking-fish.png" alt="fish">
                 <div id="rounds">Rounds Played:</div>
             </div>
-            <div class="scoresItem conceal" id="computerBox">
+            <div class="conceal" id="computerBox">
                 <img src="img/bear.png" alt="bear">
                 <div id="computer"></div>
             </div>    
