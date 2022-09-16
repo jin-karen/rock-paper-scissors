@@ -1,6 +1,9 @@
 //player synonymous with camper; computer synonymous with bear - can be changed with story context
 let playerName = "Camper";
 let computerName = "Bear";
+let btnSound = document.querySelector('#btnSound');
+let winSound = document.querySelector('#winSound');
+let loseSound = document.querySelector('#loseSound');
 
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
@@ -52,9 +55,12 @@ function playRound(playerSelection, computerSelection) {
 const startBtn = document.querySelector("#startBtn");
 const title = document.querySelector(".title");
 const subtitle = document.querySelector(".subtitle");
+const helpBtn = document.querySelector("#helpBtn");
+const exitBtn = document.querySelector("#exitBtn");
 const playAgainBtn = document.querySelector("#playAgainBtn");
 const startScreen = document.querySelector("#startScreen");
 const gameScreen = document.querySelector("#gameScreen");
+const helpScreen = document.querySelector("#helpScreen");
 const endScreen = document.querySelector("#endScreen");
 const choiceBtns = document.querySelectorAll('.choiceBtn');
 
@@ -68,7 +74,7 @@ const computer = document.querySelector("#computer");
 const winnerResult = document.querySelector("#winnerResult");
 const winnerImg = document.querySelector("#winnerImg");
 
-const skip = document.querySelector(".skip");
+const skipBtn = document.querySelector(".skipBtn");
 const contextLine1 = document.querySelector("#contextLine1");
 const contextLine2 = document.querySelector("#contextLine2");
 const contextLine3 = document.querySelector("#contextLine3");
@@ -78,6 +84,7 @@ let roundsPlayed = 0;
 const rounds = document.querySelector("#rounds");
 
 startBtn.addEventListener('click',() => {
+    btnSound.play()
     startScreenAnimation();
     window.setTimeout(() => {
         startScreen.classList.toggle('hidden');
@@ -92,7 +99,7 @@ function startScreenAnimation() {
 }
 
 function gameScreenAnimation() {
-    skip.classList.toggle('conceal');
+    skipBtn.classList.toggle('conceal');
     contextLine1.classList.toggle('appear');
     contextLine2.setAttribute('style','animation-delay: 3s;');
     contextLine2.classList.toggle('appear');
@@ -101,16 +108,19 @@ function gameScreenAnimation() {
     contextLine4.setAttribute('style','animation-delay: 9s;');
     contextLine4.classList.toggle('appear');
     window.setTimeout(() => {    
-        if (!skip.classList.contains('hidden')) {
+        if (!skipBtn.classList.contains('hidden')) {
             endAnimation();
         }
     }, 12000);
 }
 
-skip.addEventListener('click',endAnimation);
+skipBtn.addEventListener('click',()=>{
+    btnSound.play();
+    endAnimation();
+});
 
 function endAnimation() {
-    skip.classList.toggle('hidden');
+    skipBtn.classList.toggle('hidden');
     const conceal = document.querySelectorAll('.conceal');
     for (const items of conceal) {
         items.classList.toggle('conceal');
@@ -126,6 +136,7 @@ function endAnimation() {
 
 choiceBtns.forEach((button) => {
     button.addEventListener('click',() => {
+        btnSound.play()
         const computerSelection = getComputerChoice();
         const img = button.querySelector("img");
         const playerSelection = img.alt;
@@ -133,7 +144,20 @@ choiceBtns.forEach((button) => {
     });
 })
 
+helpBtn.addEventListener('click',() => {
+    btnSound.play()
+    gameScreen.classList.toggle('hidden');
+    helpScreen.classList.toggle('hidden');
+});
+
+exitBtn.addEventListener('click',() => {
+    btnSound.play()
+    helpScreen.classList.toggle('hidden');
+    gameScreen.classList.toggle('hidden');
+});
+
 playAgainBtn.addEventListener('click',() => {
+    btnSound.play()
     endScreen.classList.toggle('hidden');
     gameScreen.classList.toggle('hidden');
 });
@@ -142,9 +166,11 @@ function endGame() {
     gameScreen.classList.toggle('hidden');
     endScreen.classList.toggle('hidden');
     if (playerScore === winner) {
+        winSound.play()
         winnerResult.textContent = "Congratulations, You Win!";
         winnerImg.setAttribute('src', 'img/camper.png');
     } else {
+        loseSound.play()
         winnerResult.textContent = "Sorry, You Lose!";
         winnerImg.setAttribute('src', 'img/bear.png');
     }    

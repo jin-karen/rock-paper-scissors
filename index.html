@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <audio id="btnSound" src="sound/btnSound.mp3"></audio>
+    <audio id="winSound" src="sound/winSound.mp3"></audio>
+    <audio id="loseSound" src="sound/loseSound.mp3"></audio>
     <div id="startScreen">
         <div class="title">
             <h1>Rock, Paper, Scissors</h1>
@@ -14,7 +17,7 @@
         <button class="playBtn" id="startBtn">Start</button>
     </div>
     <div class="hidden" id="gameScreen">
-        <img class="skip conceal" src="img/skip.png" alt="skip-button">
+        <img class="skipBtn conceal" src="img/skip.png" alt="skip-button">
         <div id="context">
             <h1>Rock, Paper, Scissors</h1>
             <p id="contextLine1">You are camping in the woods and just spent all day catching and cooking fish.</p>
@@ -42,13 +45,34 @@
                 <div id="computer"></div>
             </div>    
         </div>
-        <div class="conceal" id="rules">Rules</div>
+        <img class="conceal" id="helpBtn" src="img/help.png" alt="help-button">
+    </div>
+    <div class="hidden" id="helpScreen">
+        <img id="exitBtn" src="img/exit.png" alt="exit-button">
+        <h1>Rules</h1>
+        <h2>In each round, the camper and bear will both choose between rock, paper, and scissors.</h2>
+        <img id=rulesImg src="img/rules.png" alt="rulesImg">
+        <div id="rules">
+            <div>
+                <h2>Rock beats Scissors </h2>
+                <img src="img/rock-beats-scissors.png" alt="rbsImg">
+            </div>
+            <div>
+                <h2>Paper beats Rock </h2>
+                <img src="img/paper-beats-rock.png" alt="pbrImg">
+            </div>
+            <div>
+                <h2>Scissors beats Paper </h2>
+                <img src="img/scissors-beats-paper.png" alt="sbpImg">
+            </div>       
+        </div>
+        <h2>The first to win five rounds wins the game!</h2>
     </div>
     <div class="hidden" id="endScreen">
         <h1 id="winnerResult">Congratulations you won</h1>
         <div id="winnerDisplay">
             <img src="img/fish-pile.png" alt="fish-pile">
-            <img src="img/fish-pile.png" id="winnerImg">
+            <img src="img/fish-pile.png" id="winnerImg" alt="winner">
             <img src="img/fish-pile.png" alt="fish-pile">
         </div>
         <button class="playBtn" id="playAgainBtn">Play Again</button>

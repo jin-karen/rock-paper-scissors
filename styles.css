@@ -17,6 +17,11 @@ h1{
     font-size: 375%;
 }
 
+h2{
+    font-family: 'Monaco', monospace;
+    color: #084A59;
+}
+
 p{
     font-family: 'Monaco', monospace;
     font-size: 20px;
@@ -29,8 +34,6 @@ p{
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    font-family: 'Monaco', monospace;
-    color: #084A59;
     width: 100%;
 }
 
@@ -73,7 +76,7 @@ p{
     box-shadow: 0 0 15px 1px;
 }
 
-.skip{
+.skipBtn{
     position: fixed;
     top: 20px;
     right: 20px;
@@ -140,12 +143,37 @@ p{
     width: 50%;
 }
 
-#rules{
+#helpBtn{
     position: fixed;
     bottom: 10px;
     right: 10px;
+    width: 3%;
+    cursor: pointer;
+}
+
+#exitBtn{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 3%;
+    cursor: pointer;
+}
+
+#rules{
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+
+#rulesImg{
+    width:15%;
+}
+
+#rules img{
+    width:80%;
 }
 
 #winnerDisplay img{
     width: 15%;
 }
+
