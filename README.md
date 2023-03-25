@@ -7,7 +7,7 @@ This game is recreated with Javascript, HTML, and CSS. It is my first project ap
 Live: https://jin-karen.github.io/rock-paper-scissors/
 
 Project was coded for 1920x1080 display resolution and adjustments were made for smaller screens.<br/>
-Desktop chrome usage at 1920x1080 is recommended for best and playing viewing experience.  
+Desktop chrome usage at 1920x1080 is recommended for best playing and viewing experience.  
 
 ## Screenshots:
 ![RPS_Start](https://user-images.githubusercontent.com/102393842/217392838-8eb93f6d-f870-4570-90f7-305298c2d3c3.png)
